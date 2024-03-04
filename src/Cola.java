@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Queue;
 
-public class Cola<T> implements Cola2<T> {
+public class Cola<T>{
     private int limite;
     List<T> elementos;
 Cola(int limite, List<T> elementos){
@@ -18,14 +18,6 @@ Cola(int limite, List<T> elementos){
 
     public void agregarElemento(T elemento) {
         elementos.add(elemento);
-    }
-
-    public T sacarElemento() {
-        return elementos.remove();
-    }
-
-    public List<T> getElementos() {
-        return elementos;
     }
     //el primero es el primero en salir
     @Override

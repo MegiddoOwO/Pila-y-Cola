@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Stack;
 
-public class Pila<T> implements PilaA<T> {
+public class Pila<T>{
     private int limite;
     List<T> elementos;
     Pila(int limite, List<T> elementos){
@@ -18,8 +18,6 @@ public class Pila<T> implements PilaA<T> {
 
     public void agregarElemento(T elemento) {
         elementos.add(elemento);
-    }
-    public T sacarElemento(){
     }
 //el ultimo ensalir es el primero
     @Override
