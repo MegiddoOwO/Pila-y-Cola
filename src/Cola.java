@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Queue;
 
-public class Cola<T>{
+public class Cola<T> implements Almacenable<T> {
     private int limite;
     List<T> elementos;
 Cola(int limite, List<T> elementos){
@@ -19,12 +19,12 @@ Cola(int limite, List<T> elementos){
     public void agregarElemento(T elemento) {
         elementos.add(elemento);
     }
-    //el primero es el primero en salir
-    @Override
+
     public T sacarElemento() {
-        int indice = this.elementos.size()-1;
-        T elemento = this.elementos.get(indice);
-        this.elementos.remove(indice);
-        return elemento;
+        return elementos.removeLast();
+    }
+
+    public List<T> getElementos() {
+        return elementos;
     }
 }

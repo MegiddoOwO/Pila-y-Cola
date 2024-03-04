@@ -1,7 +1,6 @@
 import java.util.List;
-import java.util.Stack;
 
-public class Pila<T>{
+public class Pila<T> implements Almacenable<T> {
     private int limite;
     List<T> elementos;
     Pila(int limite, List<T> elementos){
@@ -12,6 +11,7 @@ public class Pila<T>{
         return limite;
     }
 
+
     public void setLimite(int limite) {
         this.limite = limite;
     }
@@ -19,12 +19,8 @@ public class Pila<T>{
     public void agregarElemento(T elemento) {
         elementos.add(elemento);
     }
-//el ultimo ensalir es el primero
     @Override
     public T sacarElemento() {
-        int indice = this.elementos.size()-1;
-        T elemento = this.elementos.get(indice);
-        this.elementos.remove(indice);
-        return elemento;
+        return this.elementos.removeFirst();
     }
 }
